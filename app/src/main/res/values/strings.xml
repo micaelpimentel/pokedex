@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pokédex Micael</string>
+    <string name="pokemon_detail_title">Detalhes do pokémon</string>
+    <string name="pokemon_location_label">Localizaçao</string>
+    <string name="pokemon_weight_label">Peso:</string>
+    <string name="pokemon_height_label">Altura:</string>
+    <string name="ready">Pronto</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

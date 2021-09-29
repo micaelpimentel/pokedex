@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PokemonDetailActivity">
+
+    <TextView
+        android:id="@+id/tv_pokemonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#2E2E2E"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideStart"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Pikachu" />
+
+    <TextView
+        android:id="@+id/tv_firstType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_rounded"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/tv_pokemonName"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pokemonName"
+        tools:text="Eletric" />
+
+    <TextView
+        android:id="@+id/tv_secondType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_rounded"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_firstType"
+        app:layout_constraintStart_toEndOf="@+id/tv_firstType"
+        app:layout_constraintTop_toTopOf="@+id/tv_firstType"
+        tools:text="Metal" />
+
+    <TextView
+        android:id="@+id/tv_pokemonNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/tv_pokemonName"
+        app:layout_constraintBottom_toBottomOf="@id/tv_firstType"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd"
+        tools:text="#053" />
+
+    <TextView
+        android:id="@+id/tv_heightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textSize="12sp"
+        android:textColor="#A0A0A0"
+        android:text="@string/pokemon_height_label"
+        app:layout_constraintStart_toStartOf="@id/tv_firstType"
+        app:layout_constraintTop_toBottomOf="@id/tv_firstType" />
+
+    <TextView
+        android:id="@+id/tv_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@id/tv_heightLabel"
+        app:layout_constraintTop_toBottomOf="@id/tv_heightLabel"
+        tools:text="0.40 cm" />
+
+    <TextView
+        android:id="@+id/tv_weightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textSize="12sp"
+        android:textColor="#A0A0A0"
+        android:text="@string/pokemon_weight_label"
+        app:layout_constraintStart_toStartOf="@id/tv_height"
+        app:layout_constraintTop_toBottomOf="@id/tv_height" />
+
+    <TextView
+        android:id="@+id/tv_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@id/tv_weightLabel"
+        app:layout_constraintTop_toBottomOf="@id/tv_weightLabel"
+        tools:text="6.0 Kg" />
+
+    <ImageView
+        android:id="@+id/iv_pokemonPic"
+        android:layout_width="117dp"
+        android:layout_height="117dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_weight"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd"
+        app:layout_constraintTop_toTopOf="@id/tv_weightLabel"
+        app:layout_constraintVertical_bias="0"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_locationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="@string/pokemon_location_label"
+        android:layout_marginTop="99dp"
+        app:layout_constraintStart_toStartOf="@id/tv_weight"
+        app:layout_constraintTop_toBottomOf="@id/tv_weight" />
+
+    <fragment
+        android:id="@+id/fragment_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_locationLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideStart"
+        app:layout_constraintEnd_toEndOf="@id/guideEnd" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
